@@ -1,0 +1,15 @@
+{% extends "blog/baseblock/Sub_Base.html" %}
+{% load staticfiles %}
+
+{% block content_box %}
+    <div class="bloglist f_l">
+      {% include "blog/baseblock/ArticleList.html" %}
+    </div>
+    <div class="r_box f_r">
+      {% include "blog/baseblock/PhotoRecommend.html" %}
+      {% include "blog/baseblock/HitSort.html" %}
+      {% include "blog/baseblock/Tags.html" %}
+      {% include "blog/baseblock/Links.html" %}
+      <div class="ad"> <img src="{% static 'blog/images/03.jpg' %}"> </div>
+    </div>
+{% endblock %}

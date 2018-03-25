@@ -1,0 +1,51 @@
+<header>
+    <div class="headtop"></div>
+    <div class="contenttop">
+      <div class="logo f_l">个人博客模板古典系列之――江南墨卷</div>
+      <div class="search f_r">
+        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+          <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
+          <input name="show" value="title" type="hidden">
+          <input name="tempid" value="1" type="hidden">
+          <input name="tbname" value="news" type="hidden">
+          <input name="Submit" class="input_submit" value="搜索" type="submit">
+        </form>
+      </div>
+      <div class="blank"></div>
+      <nav>
+        <div  class="navigation">
+          <ul class="menu">
+            <li><a href="{% url 'blog:home' %}">网站首页</a></li>
+            <li><a href="#">技术杂谈</a>
+              <ul>
+                <li><a href="{% url 'blog:article_list' %}">编程开发</a></li>
+                <li><a href="{% url 'blog:article_list' %}">数据库</a></li>
+                <li><a href="{% url 'blog:article_list' %}">Linux运维</a></li>
+                <li><a href="{% url 'blog:article_list' %}">安全</a></li>
+                <li><a href="{% url 'blog:article_list' %}">其它</a></li>
+              </ul>
+            </li>
+            <li><a href="#">生活随笔</a>
+              <ul>
+                <li><a href="{% url 'blog:article_list' %}">个人日记</a></li>
+                <li><a href="{% url 'blog:article_list' %}">思维导图</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'blog:aboutme' %}">关于自己</a> </li>
+            <li><a href="{% url 'blog:messageme' %}">给我留言</a> </li>
+          </ul>
+        </div>
+      </nav>
+      <SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+</SCRIPT> 
+    </div>
+</header>
