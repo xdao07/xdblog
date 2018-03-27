@@ -101,3 +101,5 @@ VENV_PY35/
 # mypy
 .mypy_cache/
 .idea/
+uploads/
+blog/migrations/

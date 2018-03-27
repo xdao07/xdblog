@@ -2,8 +2,11 @@
 {% load staticfiles %}
 
 {% block content_box %}
+    <h2 class="nh1"><span>您现在的位置是：<a href="/">网站首页</a>>><a href="{% url 'blog:article_list' category.id %}">{{ category.name }}</a></span><b>{{ category.name }}</b></h2>
     <div class="bloglist f_l">
       {% include "blog/baseblock/ArticleList.html" %}
+      <div class="blank"></div>
+      {% include "blog/baseblock/Paginator.html" %}
     </div>
     <div class="r_box f_r">
       {% include "blog/baseblock/PhotoRecommend.html" %}

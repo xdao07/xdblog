@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.views.global_setting',   # 将global_setting中定义的全局变量加入上下文处理器中
             ],
         },
     },
@@ -126,3 +127,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 媒体文件配置
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
+"""
+自定义变量
+"""
+# 导航【技术杂谈】分类id列表
+NAV_JSZT_CATEGORY = (1, 2, 3, 4, 7, 8)
+# 导航【生活随笔】分类id列表
+NAV_SHSB_CATEGORY = (5, 6)
+# 分页，每页显示记录条数
+PER_PAGE = 2
+
+# 允许上传文件类型['jpg', 'png', 'jpeg']
+ALLOW_SUFFIX = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'txt', 'html']

@@ -1,0 +1,32 @@
+{% extends "blog/baseblock/Sub_Base.html" %}
+{% load staticfiles %}
+{% block title %}【{{ tag.name }}】标签文章列表{% endblock %}
+
+{% block content_box %}
+    <h2 class="nh1"><span>您现在的位置是：<a href="/">网站首页</a>>><a href="{% url 'blog:tag_article_list' tag.id %}">【{{ tag.name }}】</a></span><b>【{{ tag.name }}】</b></h2>
+    <div class="bloglist f_l">
+      {% include "blog/baseblock/ArticleList.html" %}
+      <div class="blank"></div>
+
+      <div class="blank"></div>
+      <div class="pagelist">
+        页次： {{ current_page.number }}/{{ current_page.paginator.num_pages }}
+        每页{{ per_page }} 总数{{ current_page.paginator.count }}<a href="{% url 'blog:tag_article_list' tag.id 1 %}">首页</a>
+        {% if current_page.has_previous %}
+        <a href="{% url 'blog:tag_article_list' tag.id current_page.previous_page_number %}">上一页</a>
+        {% endif %}
+        {% if current_page.has_next %}
+        <a href="{% url 'blog:tag_article_list' tag.id current_page.next_page_number %}">下一页</a>
+        {% endif %}
+        <a href="{% url 'blog:tag_article_list' tag.id current_page.paginator.num_pages %}">尾页</a>
+      </div>
+
+    </div>
+    <div class="r_box f_r">
+      {% include "blog/baseblock/PhotoRecommend.html" %}
+      {% include "blog/baseblock/HitSort.html" %}
+      {% include "blog/baseblock/Tags.html" %}
+      {% include "blog/baseblock/Links.html" %}
+      <div class="ad"> <img src="{% static 'blog/images/03.jpg' %}"> </div>
+    </div>
+{% endblock %}

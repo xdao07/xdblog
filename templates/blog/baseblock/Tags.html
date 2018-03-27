@@ -1,17 +1,20 @@
 <div class="cloud">
     <h3 class="tit">标签云</h3>
     <ul>
-        <li><a>Python</a></li>
-        <li><a>Mysql</a></li>
-        <li><a>Php</a></li>
-        <li><a>这是一个标签</a></li>
-        <li><a>测试标签第1个</a></li>
-        <li><a>测试标签第2个</a></li>
-        <li><a>测试标签第3个</a></li>
-        <li><a>短标</a></li>
-        <li><a>测试标签第4个</a></li>
-        <li><a>测试标签第5个</a></li>
-        <li><a>测试标签第6个</a></li>
-        <li><a>测试标签第7个</a></li>
+        {% for tag in tags %}
+        <li><a href="{% url 'blog:tag_article_list' tag.id %}">{{ tag.name }}</a></li>
+        {% endfor %}
+{#        <li><a>Python</a></li>#}
+{#        <li><a>Mysql</a></li>#}
+{#        <li><a>Php</a></li>#}
+{#        <li><a>这是一个标签</a></li>#}
+{#        <li><a>测试标签第1个</a></li>#}
+{#        <li><a>测试标签第2个</a></li>#}
+{#        <li><a>测试标签第3个</a></li>#}
+{#        <li><a>短标</a></li>#}
+{#        <li><a>测试标签第4个</a></li>#}
+{#        <li><a>测试标签第5个</a></li>#}
+{#        <li><a>测试标签第6个</a></li>#}
+{#        <li><a>测试标签第7个</a></li>#}
     </ul>
 </div>

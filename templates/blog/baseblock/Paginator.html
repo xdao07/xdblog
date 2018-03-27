@@ -1,0 +1,23 @@
+<div class="blank"></div>
+<div class="pagelist">
+    页次： {{ current_page.number }}/{{ current_page.paginator.num_pages }}
+    每页{{ per_page }} 总数{{ current_page.paginator.count }}<a href="{% url 'blog:article_list' category.id 1 %}">首页</a>
+    {% if current_page.has_previous %}
+    <a href="{% url 'blog:article_list' category.id current_page.previous_page_number %}">上一页</a>
+    {% endif %}
+    {% if current_page.has_next %}
+    <a href="{% url 'blog:article_list' category.id current_page.next_page_number %}">下一页</a>
+    {% endif %}
+    <a href="{% url 'blog:article_list' category.id current_page.paginator.num_pages %}">尾页</a>
+</div>
+{#<div class="pagelist">#}
+{#    页次： {{ current_page.number }}/{{ current_page.paginator.num_pages }}#}
+{#    每页{{ per_page }} 总数{{ current_page.paginator.count }}<a href="?page=1">首页</a>#}
+{#    {% if current_page.has_previous %}#}
+{#    <a href="{?page={{ current_page.previous_page_num }}">上一页</a>#}
+{#    {% endif %}#}
+{#    {% if current_page.has_next %}#}
+{#    <a href="?page={{ current_page.next_page_number }}">下一页</a>#}
+{#    {% endif %}#}
+{#    <a href="?page={{ current_page.paginator.num_pages }}">尾页</a>#}
+{#</div>#}

@@ -261,3 +261,21 @@ footer {
 .frindlinks ul li a:hover {
 	color: #000;
 }
+
+/* ·ÖÒ³ */
+.pagelist {
+	text-align: center;
+	color: #666;
+	width: 100%;
+	clear: both;
+	margin: 10px 0;
+	display: block
+}
+.pagelist a {
+	color: #666;
+	margin: 0 2px
+}
+.pagelist a:hover {
+	color: #f00;
+	text-decoration: underline
+}
