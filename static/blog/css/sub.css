@@ -48,14 +48,28 @@
 	color: #000;
 	line-height: 50px
 }
+/*文章内容*/
 .p_title {
 	text-align: center;
 	font-size: 20px;
 	color: #333;
 	line-height: 50px;
 }
+.box_p {
+	border: #ccc 1px dashed;
+	text-align: center;
+	padding: 5px 0;
+	margin: 0 30px 10px 30px;
+	color: #999;
+}
+.box_p a {
+	color: #999
+}
+.box_p span {
+	margin: 0 10px
+}
 
-/*文章*/
+/*文章列表*/
 .bloglist {
 	width: 620px;
 	overflow: hidden;

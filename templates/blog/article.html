@@ -1,19 +1,19 @@
-{% extends "blog/baseblock/Sub_Base.html" %}
+{% extends "blog/baseblock/SubBaseMixin.html" %}
 {% load staticfiles %}
 
-{% block title %}【{{ article.category.name }}】{{ article.title }}{% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block content_box %}
-        <h2 class="nh1"><span>您现在的位置是：<a href="/">网站首页</a>>><a href="{% url 'blog:article_list' article.category_id %}">{{ article.category.name }}</a></span><b>{{ article.category.name }}</b></h2>
-        <div class="f_box">
-          <p class="a_title">{{ article.title }}</p>
-          <p class="p_title"></p>
-          <p class="box_p"><span>发布时间：{{ article.publish | date:'Y-m-d H:m:s' }}</span><span>分类：{{ article.category.name }}</span><span>点击：{{ article.hits }}</span></p>
-          <!-- 可用于内容模板 --> 
-        </div>
-        <ul class="about_content">
-          {{ article.content | safe }}
-        </ul>
+    <h2 class="nh1"><span>您现在的位置是：<a href="/">网站首页</a>>><a href="{% url 'blog:article_list' article.category_id %}">{{ article.category.name }}</a></span><b>{{ article.category.name }}</b></h2>
+    <div class="f_box">
+      <p class="a_title">{{ article.title }}</p>
+      <p class="p_title"></p>
+      <p class="box_p"><span>发布时间：{{ article.publish | date:'Y-m-d H:m:s' }}</span><span>分类：{{ article.category.name }}</span><span>阅读：{{ article.get_hits }}</span></p>
+      <!-- 可用于内容模板 -->
+    </div>
+    <ul class="about_content">
+      {{ article.content | safe }}
+    </ul>
         <!--    <div class="nextinfos">
       <p>上一篇：<a href="/">区中医医院开展志愿服务活动</a></p>
       <p>下一篇：<a href="/">广安区批准“单独两孩”500例</a></p>

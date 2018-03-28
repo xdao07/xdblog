@@ -1,2 +1,25 @@
-{% extends "blog/baseblock/Home_Base.html" %}
-{% block title %}我的个人博客--xdao07{% endblock %}
+{% extends "blog/baseblock/BaseMixin.html" %}
+{% load staticfiles %}
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
+{% endblock %}
+{% block script %}{% endblock %}
+
+{% block middle_box %}
+  <div class="jztop"></div>
+  <div class="container">
+    <div class="bloglist f_l">
+      {% include "blog/baseblock/ArticleList.html" %}
+    </div>
+    <div class="r_box f_r">
+{#      {% include "blog/baseblock/Attention.html" %}#}
+      {% include "blog/baseblock/PhotoRecommend.html" %}
+      {% include "blog/baseblock/HitSort.html" %}
+      {% include "blog/baseblock/Tags.html" %}
+      {% include "blog/baseblock/Links.html" %}
+{#      <div class="ad"> <img src="{% static 'blog/images/03.jpg' %}"> </div>#}
+    </div>
+  </div>
+{% endblock %}

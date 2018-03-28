@@ -1,5 +1,5 @@
   <div class="ph">
-    <h3 class="tit">点击排行</h3>
+    <h3 class="tit">阅读排行</h3>
     <ul class="rank">
         {% for article in hits_articles %}
         <li><a href="{{ article.get_absolute_url }}" target="_blank" title="【{{ article.category.name }}】{{ article.title }}">{{ article.title }}</a></li>

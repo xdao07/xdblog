@@ -103,3 +103,5 @@ VENV_PY35/
 .idea/
 uploads/
 blog/migrations/
+xdweb/settings/production.py
+xdweb/settings/settings.py

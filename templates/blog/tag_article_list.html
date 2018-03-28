@@ -1,4 +1,4 @@
-{% extends "blog/baseblock/Sub_Base.html" %}
+{% extends "blog/baseblock/SubBaseMixin.html" %}
 {% load staticfiles %}
 {% block title %}【{{ tag.name }}】标签文章列表{% endblock %}
 
@@ -10,8 +10,8 @@
 
       <div class="blank"></div>
       <div class="pagelist">
-        页次： {{ current_page.number }}/{{ current_page.paginator.num_pages }}
-        每页{{ per_page }} 总数{{ current_page.paginator.count }}<a href="{% url 'blog:tag_article_list' tag.id 1 %}">首页</a>
+        页次：{{ current_page.number }}/{{ current_page.paginator.num_pages }}&nbsp;
+        每页:{{ per_page }}&nbsp;总数:{{ current_page.paginator.count }}&nbsp;<a href="{% url 'blog:tag_article_list' tag.id 1 %}">首页</a>
         {% if current_page.has_previous %}
         <a href="{% url 'blog:tag_article_list' tag.id current_page.previous_page_number %}">上一页</a>
         {% endif %}

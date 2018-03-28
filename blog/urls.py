@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
+from django.views.decorators.cache import cache_page
 from . import views
+
 
 urlpatterns = [
     # url(r'^home/$', TemplateView.as_view(template_name='blog/index.html'), name='home'),
@@ -10,6 +12,7 @@ urlpatterns = [
     # url(r'^article-list/$', TemplateView.as_view(template_name='blog/article_list.html'), name='article_list'),
     # url(r'^article/$', TemplateView.as_view(template_name='blog/article.html'), name='article'),
 
+    # url(r'^$', cache_page(60*15)(views.index), name='home'),    # cache_page()对指定视图的输出进行缓存
     url(r'^$', views.index, name='home'),
     url(r'^article-list/(?P<category_id>\d+)/$', views.article_list, name='article_list'),
     url(r'^article-list/(?P<category_id>\d+)/(?P<page>\d)/$', views.article_list, name='article_list'),

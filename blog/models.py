@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from slugify import slugify
 from django.shortcuts import reverse
+from .cache_manager import get__article_hits
 import datetime as dt
 import os
 
@@ -34,6 +35,9 @@ class Tag(models.Model):
         verbose_name = '标签'
         verbose_name_plural = verbose_name
 
+    def article_count(self):
+        return self.article.all().count()
+
     def __str__(self):
         return self.name
 
@@ -63,6 +67,10 @@ class Article(models.Model):
     # 获取文章详情链接URL
     def get_absolute_url(self):
         return reverse('blog:article_detail', args=[self.id, self.slug])
+
+    # 从缓存获取文章点击次数
+    def get_hits(self):
+        return get__article_hits(self)
 
     def __str__(self):
         return "【{0}】 {1}".format(self.category.name, self.title)
