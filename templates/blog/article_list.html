@@ -1,4 +1,4 @@
-{% extends "blog/baseblock/SubBase.html" %}
+{% extends "blog/baseblock/subbase.html" %}
 {% load staticfiles %}
 
 {% block title %}【{{ category.name }}】文章列表{% endblock %}
@@ -6,15 +6,15 @@
 {% block content_box %}
     <h2 class="nh1"><span>您现在的位置是：<a href="/">网站首页</a>>><a href="{% url 'blog:article_list' category.id %}">{{ category.name }}</a></span><b>{{ category.name }}</b></h2>
     <div class="bloglist f_l">
-      {% include "blog/baseblock/ArticleList.html" %}
+      {% include "blog/baseblock/articlelist.html" %}
       <div class="blank"></div>
-      {% include "blog/baseblock/Paginator.html" %}
+      {% include "blog/baseblock/paginator.html" %}
     </div>
     <div class="r_box f_r">
-      {% include "blog/baseblock/PhotoRecommend.html" %}
-      {% include "blog/baseblock/HitSort.html" %}
-      {% include "blog/baseblock/Tags.html" %}
-      {% include "blog/baseblock/Links.html" %}
+      {% include "blog/baseblock/photorecommend.html" %}
+      {% include "blog/baseblock/hitsort.html" %}
+      {% include "blog/baseblock/tags.html" %}
+      {% include "blog/baseblock/links.html" %}
 {#      <div class="ad"> <img src="{% static 'blog/images/03.jpg' %}"> </div>#}
     </div>
 {% endblock %}
