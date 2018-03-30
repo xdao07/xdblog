@@ -23,6 +23,8 @@ from blog.uploads import upload_image
 urlpatterns = [
     url(r'^admin/upload/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
     url(r'^admin/', admin.site.urls),
+    # 当设置DEBUG=False时，就必须在Django框架前端部署nginx或者其他web服务器来提供静态访问入口，否则需要如此设置static的url
+    url(r"^static/(?P<path>.*)$", static.serve, {"document_root": settings.STATIC_ROOT}),
     url(r'^uploads/(?P<path>.*)$', static.serve, {"document_root": settings.MEDIA_ROOT}),
     url(r'^', include('blog.urls', namespace='blog', app_name='blog')),
 ]

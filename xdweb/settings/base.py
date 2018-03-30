@@ -102,6 +102,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+# 生产环境下的静态文件目录，python manage.py collectstatic 将开发模式下的静态目录都拷贝到该目录下
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 媒体文件配置
 MEDIA_URL = '/uploads/'

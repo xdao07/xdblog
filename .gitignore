@@ -105,3 +105,4 @@ uploads/
 blog/migrations/
 xdweb/settings/production.py
 xdweb/settings/settings.py
+staticfiles/
